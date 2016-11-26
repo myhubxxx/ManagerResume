@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	
+	<package name="student" namespace="/" extends="common-default">
+		<action name="test" class="cn.mr.action.StudentAction" method="test">
+			<result>index.jsp</result>
+		</action>
+	
+		<action name="student_*" class="cn.mr.action.StudentAction" method="{1}">
+			
+			<result name="success">/stu/myInfo.jsp</result>
+			<result name="login">/stu/login.jsp</result>
+		</action>
+		
+		
+	</package>
+
+</struts>	
+	

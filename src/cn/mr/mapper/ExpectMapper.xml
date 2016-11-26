@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+
+<mapper namespace="cn.mr.ExpectMapper">
+
+	<insert id="insert" parameterType="cn.mr.domain.Expect">
+		INSERT INTO r_expect (firstcity, secondcity, expectdirection, expectposition, expectsalary, selfevaluate, sid)
+		VALUES			(#{firstcity},#{secondcity},#{expectdirection},#{expectposition},#{expectsalary},#{selfevaluate},#{sid})
+	</insert>
+	
+	<delete id="deleteById" parameterType="String">
+		DELETE FROM r_expect
+		WHERE  sid = #{sid}
+	</delete>
+	
+	<update id="updateById" parameterType="cn.mr.domain.Expect">
+		UPDATE r_expect
+		<set>
+			<if test="firstcity != null">firstcity= #{firstcity},</if>
+			<if test="secondcity != null">secondcity = #{secondcity},</if> 		
+			<if test="expectdirection != null">expectdirection= #{expectdirection},</if>
+			<if test="expectposition != null">expectposition= #{expectposition},</if>
+			<if test="expectsalary != null">expectsalary= #{expectsalary},</if>
+			<if test="selfevaluate != null">selfevaluate= #{selfevaluate},</if>
+			<if test="sid != null">sid= #{sid},</if>
+		</set>
+		
+		WHERE sid = #{sid}
+	</update>
+
+	<select id="getById" parameterType="String" resultType="cn.mr.domain.Expect">
+		SELECT * FROM r_expect
+		WHERE sid = #{sid}
+	</select>
+
+
+	
+	
+</mapper>

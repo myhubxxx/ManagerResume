@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+<mapper namespace="cn.mr.StudentMapper">
+		
+	<insert id="insert" parameterType="cn.mr.domain.Student">
+		INSERT INTO r_student(sid, snumber, spassword, susername, employee)
+		VALUES 		(#{sid}, #{snumber},#{spassword},#{susername},
+		<if test="employee != null">#{employee}</if>
+		<if test="employee == null">0</if>)	
+	</insert>
+	
+	<delete id="deleteById" parameterType="String">
+		DELETE FROM r_student 
+		WHERE  sid = #{sid}
+	</delete>
+	
+	<update id="updateById" parameterType="cn.mr.domain.Student">
+		UPDATE r_student
+		<set>
+			<if test="spassword != null">spassword = #{spassword},</if>
+			<if test="susername != null">susername = #{susername},</if>
+			<if test="employee  != null">employee = #{employee},</if>
+		</set>   
+		
+		WHERE sid = #{sid}
+	</update>
+	
+	<select id="getById" parameterType="String" resultType="cn.mr.domain.Student">
+		SELECT * FROM  r_student
+		WHERE sid = #{sid}
+	</select>
+	<select id="getByNumber" parameterType="String" resultType="cn.mr.domain.Student">
+		SELECT * FROM  r_student
+		WHERE snumber = #{snumber}
+	</select>
+
+	
+</mapper>

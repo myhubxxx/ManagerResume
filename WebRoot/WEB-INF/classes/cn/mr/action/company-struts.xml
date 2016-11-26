@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	
+	<package name="company" namespace="/" extends="common-default">
+		<action name="test" class="cn.mr.action.CompanyAction" method="test">
+			<result>index.jsp</result>
+		</action>
+	
+		<action name="company_*" class="cn.mr.action.CompanyAction" method="{1}">
+			
+			<result name="regist">/com/regist.jsp</result>
+			<result name="success">/com/success.jsp</result>
+			<result name="login">/com/login.jsp</result>
+			<result name="companyShow">/com/companyShow.jsp</result>
+		</action>
+		
+		
+	</package>
+
+</struts>	
+	

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+
+<mapper namespace="cn.mr.EducationMapper">
+
+	<insert id="insert" parameterType="cn.mr.domain.Education">
+		INSERT INTO r_education (eid, startdate, enddate, schoolname, profession, educational, 
+						degree, rank, score, professionlesson, certificateman, certificatetel, sid)
+		VALUES				(#{eid},#{startdate},#{enddate},#{schoolname},#{profession},#{educational},
+						#{degree},#{rank},#{score},#{professionlesson},#{certificateman},#{certificatetel},#{sid})
+	</insert>
+	
+	<delete id="deleteByEid" parameterType="String">
+		DELETE FROM r_education 
+		WHERE  eid = #{eid}
+	</delete>
+	
+	<update id="updateByEid" parameterType="cn.mr.domain.Education">
+		UPDATE r_education
+		<set>
+			<if test="startdate != null">startdate = #{startdate},</if>
+			<if test="enddate != null">enddate= #{enddate},</if> 
+			<if test="schoolname != null">schoolname = #{schoolname},</if> 	
+			<if test="profession != null">profession= #{profession},</if>
+			<if test="degree != null">degree= #{degree},</if>
+			<if test="rank != null">rank= #{rank},</if>
+			<if test="score != null">score= #{score},</if>
+			<if test="professionlesson != null">professionlesson= #{professionlesson},</if>
+			<if test="certificateman != null">certificateman= #{certificateman},</if>
+			<if test="certificatetel != null">certificatetel= #{certificatetel},</if>
+			<if test="sid != null">sid= #{sid},</if>
+		</set>
+		
+		WHERE eid = #{eid}
+	</update>
+	
+	<select id="getByEid" parameterType="String" resultType="cn.mr.domain.Education">
+		SELECT * FROM r_education
+		WHERE eid = #{eid}
+	</select>
+	
+
+	
+</mapper>

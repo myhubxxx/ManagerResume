@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+
+<mapper namespace="cn.mr.StudentInfoMapper">
+
+	<insert id="insert" parameterType="cn.mr.domain.StudentInfo">
+		INSERT INTO r_studentinfo (sid, infoname, idcard,infosex,infobirthday, infonaction, birthdayplace,profession,
+									tel,email,professionaldirection,specialty,professionallession)
+		VALUES		(#{sid},#{ infoname},#{ idcard},#{infosex},#{infobirthday},#{ infonaction},#{ birthdayplace},#{profession},
+								#{tel},#{email},#{professionaldirection},#{specialty},#{professionallession}) 
+	</insert>
+	
+	<delete id="deleteById" parameterType="String">
+		DELETE FROM r_studentinfo
+		WHERE sid = #{sid}
+	</delete>
+	
+	<update id="updateById" parameterType="cn.mr.domain.StudentInfo">
+		UPDATE 	r_studentinfo
+		<set>
+			<if test="infoname != null">infoname = #{infoname},</if>
+			<if test="idcard != null">idcard = #{idcard},</if> 
+			<if test="infosex != null">infosex = #{infosex},</if>
+			<if test="infobirthday != null">infobirthday = #{infobirthday},</if> 
+			<if test="infonaction != null">infonaction = #{infonaction},</if>
+			<if test="birthdayplace != null">birthdayplace = #{birthdayplace},</if> 
+			<if test="profession != null">profession = #{profession},</if>
+			<if test="tel != null">tel = #{tel},</if> 
+			<if test="email != null">email = #{email},</if>
+			<if test="professionaldirection != null">professionaldirection = #{professionaldirection},</if> 
+			<if test="specialty != null">specialty = #{specialty},</if>
+			<if test="professionallession != null">professionallession = #{professionallession},</if> 
+		</set>
+		
+		WHERE sid = #{sid}
+	</update>
+	
+	<select id="getById" parameterType="String" resultType="cn.mr.domain.StudentInfo">
+		SELECT * FROM r_studentinfo
+		WHERE sid = #{sid}
+	</select>
+	
+	
+	
+	
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="common-default" namespace="/"  extends="struts-default">
+		<result-types>
+			<result-type name="captcha" class="result.CaptchaResult"></result-type>
+		</result-types>
+		
+		<interceptors>
+			<interceptor name="accessInterceptor" class="cn.mr.interceptor.AccessInterceptor"></interceptor>
+			
+			<!-- mydefault include  defaultStack accessInterceptor -->
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="accessInterceptor"></interceptor-ref>
+			</interceptor-stack>
+			
+		</interceptors>
+	</package>
+	
+	
+	<package name="captcha" namespace="/" extends="common-default">
+		<!-- the validatecode -->
+		<action name="captcha">
+			<result name="success" type="captcha"></result>
+		</action>
+	</package>
+	
+	<!-- struts mapper -->
+	<include file="cn/mr/action/student-struts.xml"></include>	
+	<include file="cn/mr/action/admin-struts.xml"></include>	
+	<include file="cn/mr/action/company-struts.xml"></include>	
+
+	<include file="Action/test/StrutsActionTest.xml"></include>
+	<!-- <include file="cn/fruit/action/struts-testAction.xml"></include> -->
+	
+</struts>
+ 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ManagerResume"
+  id="myeclipse.1463137349267"
+  context-root="/ManagerResume"
+  j2ee-spec="5.0"
+  archive="ManagerResume.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

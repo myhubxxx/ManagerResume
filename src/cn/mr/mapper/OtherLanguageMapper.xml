@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+
+<mapper namespace="cn.mr.OtherLanguageMapper">
+
+	<insert id="insert" parameterType="cn.mr.domain.OtherLanguage">
+		INSERT INTO r_otherlanguage (englishlevel,englishscore,TOEFL,GRE,GMAT,IELTS,TOEIC,SAT,othercontent,sid)
+		VALUES 				 (#{englishlevel},#{englishscore},#{toefl},#{gre},#{gmat},#{ielts},#{toeic},#{sat},#{othercontent},#{sid})
+	</insert>
+	
+	<delete id="deleteById" parameterType="String">
+		DELETE FROM r_otherlanguage 
+		WHERE sid = #{sid}
+	</delete>
+
+	<update id="updateById" parameterType="cn.mr.domain.OtherLanguage">
+		UPDATE r_otherlanguage 
+		<set>
+			<if test="englishlevel != null">englishlevel = #{englishlevel},</if>
+			<if test="englishscore != null">englishscore = #{englishscore},</if> 	
+			<if test="toefl != null">TOEFL = #{toefl},</if>
+			<if test="gre != null">GRE = #{gre},</if> 	
+			<if test="gmat != null">GMAT = #{gmat},</if>
+			<if test="ielts != null">IELTS = #{ielts},</if> 	
+			<if test="toeic != null">TOEIC = #{toeic},</if>
+			<if test="sat != null">SAT = #{sat},</if> 	
+			<if test="othercontent != null">othercontent = #{othercontent},</if>
+		</set>
+		
+		WHERE sid = #{sid}
+	</update>
+	
+	<select id="getById" parameterType="String" resultType="cn.mr.domain.OtherLanguage">
+		SELECT * FROM r_otherlanguage
+		WHERE  sid = #{sid}
+	</select>
+
+
+
+	
+	
+</mapper>

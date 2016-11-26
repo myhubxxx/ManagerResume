@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+
+<mapper namespace="cn.mr.ProjectExperienceMapper">
+
+	<insert id="insert" parameterType="cn.mr.domain.ProjectExperience">
+		INSERT INTO r_projectexperience (pid, pname, startdate, enddate, responsibility, summary, sid)
+		VALUES				(#{pid},#{pname},#{startdate},#{enddate},#{responsibility},#{summary},#{sid})
+	</insert>
+	
+	<delete id="deleteByEid" parameterType="String">
+		DELETE FROM  r_projectexperience
+		WHERE pid = #{pid}
+	</delete>
+	
+	<update id="updateByEid" parameterType="cn.mr.domain.ProjectExperience">
+		UPDATE r_projectexperience
+		<set>
+			<if test="pname != null">pname = #{pname},</if> 	
+			<if test="startdate != null">startdate = #{startdate},</if>
+			<if test="enddate != null">enddate = #{enddate},</if> 	
+			<if test="responsibility != null">responsibility = #{responsibility},</if>
+			<if test="summary != null">summary = #{summary},</if> 	
+		</set>
+		
+		WHERE pid = #{pid}
+	</update>
+	
+	<select id="getByEid" parameterType="String" resultType="cn.mr.domain.ProjectExperience">
+		SELECT * FROM  r_projectexperience 
+		WHERE pid = #{pid}
+	</select>
+	
+	
+</mapper>

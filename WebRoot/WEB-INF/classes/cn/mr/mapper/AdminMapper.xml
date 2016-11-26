@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+
+<mapper namespace="cn.mr.AdminMapper">
+
+	<insert id="insert" parameterType="cn.mr.domain.Admin">
+		INSERT INTO r_admin (aid, ausername, apassword, arealname, alevel)
+		VALUES 				(#{aid},#{ausername},#{apassword},#{arealname},#{alevel})
+	</insert>
+	
+	<delete id="deleteById" parameterType="String">
+		DELETE FROM r_admin
+		WHERE aid = #{aid}
+	</delete>
+	
+	<update id="updateById" parameterType="cn.mr.domain.Admin">
+		UPDATE  r_admin	 
+		<set>
+			<if test="apassword != null">apassword = #{apassword},</if>
+			<if test="arealname != null">arealname = #{arealname},</if> 		
+		</set>
+		
+		WHERE aid = #{aid}
+	</update>
+	
+	
+
+		
+	<select id="getByUserName" resultType="cn.mr.domain.Admin" parameterType="String">
+		SELECT * FROM r_admin WHERE AUSERNAME = #{username}
+	</select>
+	<select id="getById" parameterType="String" resultType="cn.mr.domain.Admin">
+		SELECT * FROM r_admin WHERE aid = #{aid}
+	</select>
+	
+	
+	
+	
+</mapper>

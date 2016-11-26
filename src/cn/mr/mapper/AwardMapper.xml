@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+
+<mapper namespace="cn.mr.AwardMapper">
+
+	<insert id="insert" parameterType="cn.mr.domain.Award">
+		INSERT INTO r_award(aid, adate, awardname, awardlevel, sid) 
+		VALUES		(#{aid}, #{adate}, #{awardname}, #{awardlevel}, #{sid})
+	</insert>
+	
+	<delete id="deleteByAid" parameterType="String">
+		DELETE FROM r_award
+		WHERE aid = #{aid}
+	</delete>
+	
+	<update id="updateByAid" parameterType="String">
+		UPDATE r_award 
+		<set>
+			<if test="adate != null">adate = #{adate},</if>
+			<if test="awardname != null">awardname = #{awardname},</if>
+			<if test="awardlevel != null">awardlevel = #{awardlevel},</if>
+		</set>
+		 
+		WHERE aid = #{aid}
+	</update>
+	
+	<select id="getByAid" resultType="cn.mr.domain.Award" parameterType="String">
+		SELECT * FROM r_award
+		WHERE aid = #{aid}
+	</select>
+
+
+	
+</mapper>

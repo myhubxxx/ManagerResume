@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+<mapper namespace="cn.mr.CompanyMapper">
+		
+	<insert id="insert" parameterType="cn.mr.domain.Company">
+		INSERT INTO r_company (cid, cusername, cpassword, ccompanyname, ccompanynumber, cisverify)
+		VALUES 			(#{cid},#{cusername},#{cpassword},#{ccompanyname},#{ccompanynumber},#{cisverify})
+	</insert>
+	
+	<delete id="deleteById" parameterType="String">
+		DELETE FROM r_company 
+		WHERE cid = #{cid}
+	</delete>
+
+	<update id="updateById" parameterType="cn.mr.domain.Company">
+		UPDATE r_company
+		<set>
+			<if test="cpassword != null">cpassword = #{cpassword},</if>
+			<if test="ccompanyname != null">ccompanyname = #{ccompanyname},</if>
+			<if test="ccompanynumber != null">ccompanynumber = #{ccompanynumber},</if>
+			<if test="cisverify != null">cisverify = #{cisverify},</if>
+		</set>
+		
+		WHERE cid = #{cid}
+	</update>
+	
+	<select id="getById" resultType="cn.mr.domain.Company" parameterType="String">
+		SELECT * FROM r_company 
+		WHERE  cid = #{cid}
+	</select>
+	<select id="getByUserName" resultType="cn.mr.domain.Company" parameterType="String">
+		SELECT * FROM r_company 
+		WHERE  cusername = #{cusername}
+	</select>
+	
+	
+	<select id="getAllCount" parameterType="String"
+		resultType="int">
+		select count(*) from r_company 
+	
+		<where>
+			1 = 1
+			<if test="_parameter != null and _parameter !='' ">${_parameter}</if>
+		</where>
+		order by orderby
+	</select>
+	
+	<!-- attr: attrUrl must be the type of 1=1 ('a'='a') and xxx=kkk -->
+	<select id="getCurrentPage" parameterType="HashMap"
+		resultType="cn.mr.domain.Company">
+		select * from r_company
+		
+		<where>
+			<if test="attrUrl != null">${attrUrl}</if>
+		</where>
+		
+		order by orderby
+		limit #{lose},#{pageSize}
+	</select>
+	
+	
+</mapper>

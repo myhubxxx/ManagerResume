@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+
+<mapper namespace="cn.mr.WorkExperienceMapper">
+
+
+	<insert id="insert" parameterType="cn.mr.domain.WorkExperience">
+		INSERT INTO r_workexperience (wid, wloaction, wpost, wdate, enddate, econtent, sid) 
+		VALUES		(#{wid},#{wloaction},#{wpost},#{wdate},#{enddate},#{econtent},#{sid})
+	</insert>
+	
+	<delete id="deleteByWid" parameterType="String">
+		DELETE FROM r_workexperience
+		WHERE wid = #{wid}
+	</delete>
+	
+	<update id="updateByWid" parameterType="cn.mr.domain.WorkExperience">
+		UPDATE  r_workexperience
+		<set>
+			<if test="wloaction != null">wloaction = #{wloaction},</if>
+			<if test="wpost != null">wpost = #{wpost},</if> 
+			<if test="wdate != null">wdate = #{wdate},</if>
+			<if test="enddate != null">enddate = #{enddate},</if> 
+			<if test="econtent != null">econtent = #{econtent},</if>
+		</set>
+		
+		WHERE wid = #{wid}
+	</update>
+
+	<select id="getByWid" parameterType="String" resultType="cn.mr.domain.WorkExperience">
+		SELECT * FROM r_workexperience
+		WHERE wid = #{wid}
+	</select>
+
+	
+	
+</mapper>
