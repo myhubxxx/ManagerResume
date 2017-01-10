@@ -127,7 +127,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="submit_button">
 						<span class="">
 							<a class="btn-red btn-save-next">保存并继续下一步</a>
-							<a class="btn-red btn-next">下一步</a>
+							<a class="btn-red btn-next" onclick="changeBox('tag1');this.blur()">下一步</a>
 						</span>
 					</div>
 				</div>
@@ -213,7 +213,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="submit_button">
 						<span class="">
 							<a class="btn-red btn-save-next">保存并继续下一步</a>
-							<a class="btn-red btn-next">下一步</a>
+							<a class="btn-red btn-next" onclick="changeBox('tag2');this.blur()">下一步</a>
 						</span>
 						
 					</div>
@@ -276,7 +276,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="submit_button">
 						<span class="">
 							<a class="btn-red btn-save-next">保存并继续下一步</a>
-							<a class="btn-red btn-next">下一步</a>
+							<a class="btn-red btn-next" onclick="changeBox('tag3');this.blur()">下一步</a>
 						</span>
 						
 					</div>
@@ -330,7 +330,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 							<div>	
 								<span>
-									<label class="row_one_label">来　　源</label>
+									<label class="row_one_label">级　　别</label>
 									<select name="work_pos">
 										<option value="c1">学校</option>
 										<option value="c2">市级</option>
@@ -359,7 +359,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="submit_button">
 						<span class="">
 							<a class="btn-red btn-save-next">保存并继续下一步</a>
-							<a class="btn-red btn-next">下一步</a>
+							<a class="btn-red btn-next" onclick="changeBox('tag4');this.blur()">下一步</a>
 						</span>
 						
 					</div>
@@ -387,8 +387,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<input type="hidden" value=""/>
 							<span>
 								<label class="row_one_label">实践经历</label>
-								<input type="radio" name="prac_exper" id="pr_exper_y" value="1" /><label for="pr_exper_y">有</label>
-								<input type="radio" name="prac_exper" id="pr_exper_n" value="0" /><label for="pr_exper_n">无</label>
+								<input type="radio" name="prac_exper" id="pr_exper_y" value="1" checked="checked"/><label for="pr_exper_y">有</label>
+								<input type="radio" name="prac_exper" id="pr_exper_n" value="0"  /><label for="pr_exper_n">无</label>
 							</span>
 							<span>
 								<label for="pr_loc"  class="row_one_label">实践经历</label>
@@ -414,7 +414,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="submit_button">
 						<span class="">
 							<a class="btn-red btn-save-next">保存并继续下一步</a>
-							<a class="btn-red btn-next">下一步</a>
+							<a class="btn-red btn-next" onclick="changeBox('tag5');this.blur()">下一步</a>
 						</span>
 						
 					</div>
@@ -466,7 +466,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="submit_button">
 						<span class="">
 							<a class="btn-red btn-save-next">保存并继续下一步</a>
-							<a class="btn-red btn-next">下一步</a>
+							<a class="btn-red btn-next" onclick="changeBox('tag6');this.blur()">下一步</a>
 						</span>
 						
 					</div>
