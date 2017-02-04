@@ -21,7 +21,7 @@ a:hover{
 	color: rgb(230,107,20);
 }
 input{
-	height: 26px;
+	height: 32px;
 	padding: 2px;
 	font-size: 14px;
 }
@@ -247,7 +247,7 @@ input{
 }
 .intro_main_center .bas_info form span label.email
 {
-	margin-left: 35px;
+	margin-left: 30px;
 }
 .intro_main_center .bas_info form span input#email
 {
@@ -291,6 +291,7 @@ input{
 form #expect_city #forward
 {
 	width: 160px;
+	height: 155px;
 	text-align: center;
 }
 form #expect_city #city
