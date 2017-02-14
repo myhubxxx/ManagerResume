@@ -72,6 +72,10 @@ form .row_two_label
 	font-size: 18px;
 	margin-left: 36px;
 }
+.sexlabel{
+	font-size:18px;
+	margin-left:77px;
+}
 
 select
 {
@@ -79,7 +83,7 @@ select
 	font-size: 16px;
 }
 
-textarea#major_course,#pro_content,#pr_content
+textarea#major_course,#pro_content,#pr_content,#assessment
 {
 	width: 346px;
 	height: 120px;

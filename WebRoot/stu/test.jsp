@@ -22,8 +22,8 @@
 		<div class="intro_top">
 			<span id="top_index"> <a href="###">首页</a>
 			</span> <span id="top_quit"> <a href="###">退出</a>
-			</span> <span id="top_user"> <img src="${path}/stu/img/user.png" /> <a
-				href="###">刘茂填写功填写</a>
+			</span> <span id="top_user"> <img src="${path}/stu/img/user.png" />
+				<a href="###">刘茂填写功填写</a>
 			</span>
 		</div>
 	</div>
@@ -61,20 +61,59 @@
 				</div>
 				<div class="###">
 					<form action="" method="">
-						<span> <label for="name" class="row_one_label">姓 名</label>
-							<input type="text" id="name" name="name" />
-						</span> <span> <label class="row_one_label">性 别</label><input
-							type="radio" name="sex" id="sex1" value="1" checked="checked" />
-							<label for="sex1">男</label> <input type="radio" name="sex"
-							id="sex2" value="0" /> <label for="sex2">女</label>
-						</span> <span> <label for="birth_time" class="row_one_label">出生年月</label>
-							<input type="text" id="birth_time" name="birth_time"
-							class="Wdate generic_time" onClick="WdatePicker()" />
+						<span> <label for="id" class="row_one_label">学号</label> <input
+							type="text" id="id" name="id" readonly="readonly" />
+						</span> <span> <label for="name" class="row_one_label">姓 名</label>
+							<input type="text" id="name" name="name" readonly="readonly" />
 						</span> <span> <label for="addr_home" class="row_one_label">家庭住址</label>
 							<input type="text" id="addr_home" name="addr_home" />
 						</span> <span> <label for="addr_com" class="row_one_label">通信地址</label>
 							<input type="text" id="addr_com" name="addr" />
-						</span>
+						</span> <span> <label for="birth_time" class="row_one_label">出生年月</label>
+							<input type="text" id="birth_time" name="birth_time"
+							class="Wdate generic_time" onClick="WdatePicker()" /> </span>
+							<span><label class="row_one_label">性 别</label><input type="radio" name="sex"
+							id="sex1" value="1" checked="checked" /> <label for="sex1">男</label>
+							<input type="radio" name="sex" id="sex2" value="0" /> <label
+							for="sex2">女</label>
+						</span> <span><label for="polstatus" class="row_one_label ">政治面貌</label>
+							<select id="polstatus" name="polstatus">
+								<option value="1301">共青团员</option>
+								<option value="1301">中共预备党员</option>
+								<option value="1301">中共党员</option>
+								<option value="1301">九三学社</option>
+						</select><label for="nation" class="row_two_label ">民族</label> <select
+							id="nation" name="nation">
+								<option value="1301">汉族</option>
+								<option value="1301">满族</option>
+								<option value="1301">回族</option>
+								<option value="1301">壮族</option>
+						</select><label for="edubg" class="row_two_label ">学历</label> <select
+							id="edubg" name="edubg">
+								<option value="1301">高中</option>
+								<option value="1301">专科</option>
+								<option value="1301">本科</option>
+								<option value="1301">研究生</option>
+						</select></span> <span> <label for="grade" class="row_one_label">年级</label>
+							<select id="grade" name="grade">
+								<option value="2013">2013</option>
+								<option value="2014">2014</option>
+								<option value="2015">2015</option>
+						</select> <label for="profession" class="row_two_label ">专业</label> <select
+							id="profession" name="profession">
+								<option value="profession01">软件工程</option>
+								<option value="profession02">计算机科学与技术</option>
+								<option value="profession03">物联网工程</option>
+								<option value="profession04">网络工程</option>
+						</select> <label for="classid" class="row_two_label ">班级</label> <select
+							id="classid" name="classid">
+								<option value="1301">1301</option>
+								<option value="1301">1302</option>
+								<option value="1301">1303</option>
+								<option value="1301">1304</option>
+						</select>
+						</span> 
+
 						<!--修改时间：2016.05.15-->
 						<!--<span>
 								<label for="grad_school" class="row_one_label">毕业院校</label>
@@ -96,10 +135,11 @@
 								<option value="02">身份证</option>
 						</select> <label for="identity_id" class="row_two_label identity">证件号码</label>
 							<input type="text" id="identity_id" name="identity_id" />
-						</span> <span> <label for="phone_number" class="row_one_label">电
+						</span>
+						<span> <label for="phone_number" class="row_one_label">电
 								话</label> <input type="text" id="phone_number" name="phone_number"
 							class="input_text" /> <label for="email"
-							class="row_two_label email">邮 箱</label> <input type="text"
+							class="row_two_label email">邮　　箱</label> <input type="text"
 							id="email" name="email" class="input_text" />
 						</span>
 						<!--修改时间：2016.05.15-->
@@ -156,7 +196,7 @@
 						</span> <span> <label for="school_name" class="row_one_label">学
 								校</label> <input type="text" id="school_name" name="school_name"
 							class="input_text" /> <label for="gra_major"
-							class="row_two_label">专 业</label> <input type="text"
+							class="row_two_label">专　　业</label> <input type="text"
 							id="gra_major" name="gra_major" class="input_text" />
 						</span> <span> <label for="eduback" class="row_one_label">学
 								历</label> <select name="eduback" size="1">
@@ -234,7 +274,8 @@
 									<span> <label class="wish-city">长期出差意愿</label><input
 										type="radio" name="btrip" id="btrip1" value="1" /> <label
 										for="btrip1">有</label> <input type="radio" name="btrip"
-										id="btrip2" value="0" checked="checked" /> <label for="btrip2">无</label>
+										id="btrip2" value="0" checked="checked" /> <label
+										for="btrip2">无</label>
 									</span> <span> <label for="work_direc" class="wish-city">期望工作方向</label>
 										<input type="text" name="work_direc" id="work_direc"
 										class="input_text" />
@@ -261,9 +302,14 @@
 								</select>
 							</span>-->
 									<span style="margin-bottom: 120px;"> <label
-										for="major_course" class="row_one_label">自 我 评 价</label> <textarea
-											id="major_course" name="evalution"></textarea>
+										for="assessment" class="row_one_label">自 我 评 价</label> <textarea
+											id="assessment" name="assessment" maxlength="200" onchange="checkLength('assessment',200)" onkeydown="checkLength('assessment',200)" onkeyup="checkLength('assessment',200)"></textarea>
 									</span>
+									<script type="text/javascript">function checkLength(obj,length){
+									if(isNaN(length)) length=0;
+									var objtext=document.getElementById(obj);
+									objtext.value=objtext.value.substring(0,length);
+									}</script>
 								</form>
 							</div>
 							<div class="submit_button">
@@ -480,25 +526,21 @@
 											<option value="forlevel12">其他</option>
 									</select> <label class="row_two_label">分数</label> <input type="text"
 										name="forlangscore" id="forlangscore" />
+									</span> <span> <label class="row_one_label">读写能力</label> <select
+										name="rw">
+											<option value="rwlevel01">基础</option>
+											<option value="rwlevel02">一般</option>
+											<option value="rwlevel03">熟练</option>
+											<option value="rwlevel04">精通</option>
+									</select>
+									</span> <span> <label class="row_one_label">听说能力</label> <select
+										name="ls">
+											<option value="lslevel01">基础</option>
+											<option value="lslevel02">一般</option>
+											<option value="lslevel03">熟练</option>
+											<option value="lslevel04">精通</option>
+									</select>
 									</span>
-									<span>
-								<label class="row_one_label">读写能力</label>
-								<select name="rw">
-									<option value="rwlevel01">基础</option>
-									<option value="rwlevel02">一般</option>
-									<option value="rwlevel03">熟练</option>
-									<option value="rwlevel04">精通</option>
-								</select>
-							</span>
-							<span>
-								<label class="row_one_label">听说能力</label>
-								<select name="ls">
-									<option value="lslevel01">基础</option>
-									<option value="lslevel02">一般</option>
-									<option value="lslevel03">熟练</option>
-									<option value="lslevel04">精通</option>
-								</select>
-							</span>
 								</form>
 							</div>
 							<div id="other-lang">
@@ -518,22 +560,17 @@
 									</table>
 								</div>
 								<form action="" method="">
-									<input type="hidden" value="" />
-									 <span> <label
+									<input type="hidden" value="" /> <span> <label
 										for="cert-name" class="row_one_label">证书名称</label> <input
 										type="text" name="cert-name" id="cert-name" />
-									</span>
-									 <span> <label for="cert-id" class="row_one_label">证书编号</label>
+									</span> <span> <label for="cert-id" class="row_one_label">证书编号</label>
 										<input type="text" name="cert-id" id="cert-id" />
-									</span> 
-									<span> <label for="cert-issuer" class="row_one_label">发证机关</label>
+									</span> <span> <label for="cert-issuer" class="row_one_label">发证机关</label>
 										<input type="text" name="cert-issuer" id="cert-issuer" />
-									</span>
-									 <span> <label for="cert-date" class="row_one_label">发证日期</label>
+									</span> <span> <label for="cert-date" class="row_one_label">发证日期</label>
 										<input type="text" id="cert-date" name="cert-date"
 										class="Wdate generic_time" onClick="WdatePicker()" />
-									</span> 
-									<span class="continue_add"> <input type="button"
+									</span> <span class="continue_add"> <input type="button"
 										name="add" id="add" value="继续添加" />
 									</span>
 								</form>
