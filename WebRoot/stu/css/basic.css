@@ -380,3 +380,8 @@ form #expect_city #city input
 	font-size: 16px;
 	color: black;
 }
+label#displayassess,#dispr_content,#dispro_content{
+	font-weight:bold;
+	color:red;
+	vertical-align:bottom;
+}

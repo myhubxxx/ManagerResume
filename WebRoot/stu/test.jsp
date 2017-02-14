@@ -23,7 +23,7 @@
 			<span id="top_index"> <a href="###">首页</a>
 			</span> <span id="top_quit"> <a href="###">退出</a>
 			</span> <span id="top_user"> <img src="${path}/stu/img/user.png" />
-				<a href="###">刘茂填写功填写</a>
+				<a href="###">刘茂功刘茂功刘茂功刘茂功填写</a>
 			</span>
 		</div>
 	</div>
@@ -303,13 +303,9 @@
 							</span>-->
 									<span style="margin-bottom: 120px;"> <label
 										for="assessment" class="row_one_label">自 我 评 价</label> <textarea
-											id="assessment" name="assessment" maxlength="200" onchange="checkLength('assessment',200)" onkeydown="checkLength('assessment',200)" onkeyup="checkLength('assessment',200)"></textarea>
+											id="assessment" name="assessment" maxlength="200" onchange="checkLength('assessment','displayassess',200)" onkeydown="checkLength('assessment','displayassess',200)" onkeyup="checkLength('assessment','displayassess',200)"></textarea>
+											<label  id="displayassess">字数:0/200</label>
 									</span>
-									<script type="text/javascript">function checkLength(obj,length){
-									if(isNaN(length)) length=0;
-									var objtext=document.getElementById(obj);
-									objtext.value=objtext.value.substring(0,length);
-									}</script>
 								</form>
 							</div>
 							<div class="submit_button">
@@ -438,7 +434,8 @@
 										class="Wdate generic_time" onClick="WdatePicker()" />
 									</span> <span style="margin-bottom: 120px;"> <label
 										for="pr_content" class="row_one_label">实践内容</label> <textarea
-											id="pr_content" name="major_course"></textarea>
+											id="pr_content" name="pr_content" maxlength="200" onchange="checkLength('pr_content','dispr_content',200)" onkeydown="checkLength('pr_content','dispr_content',200)" onkeyup="checkLength('pr_content','dispr_content',200)" ></textarea>
+											<label id="dispr_content">字数:0/200</label>
 									</span> <span class="continue_add"> <input type="button"
 										name="add" id="add" value="继续添加" />
 									</span>
@@ -487,7 +484,8 @@
 										<input type="text" name="pro_duty" id="pro_duty" />
 									</span> <span style="margin-bottom: 120px;"> <label
 										for="pro_content" class="row_one_label">项目描述</label> <textarea
-											id="pro_content" name="major_course"></textarea>
+											id="pro_content" name="pro_content"  maxlength="200" onchange="checkLength('pro_content','dispro_content',200)" onkeydown="checkLength('pro_content','dispro_content',200)" onkeyup="checkLength('pro_content','dispro_content',200)" ></textarea>
+											<label id="dispro_content">字数:0/200</label>
 									</span> <span class="continue_add"> <input type="button"
 										name="add" id="add" value="继续添加" />
 									</span>
