@@ -13,6 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<link rel="stylesheet" type="text/css" href="${path}/stu/css/basic.css"/>
 		<link rel="stylesheet" type="text/css" href="${path}/stu/css/common.css"/>
 		<script type="text/javascript" src="${path}/stu/js/index.js"></script>
+		<script language="javascript" type="text/javascript" src="${path}/stu/date/WdatePicker.js"></script>
 	</head>
 	<body>
 		<div id="top_bottom">
@@ -72,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 							<span>
 								<label for="birth_time" class="row_one_label">出生年月</label>
-								<input type="text" id="birth_time" name="birth_time" class="generic_time"/>
+								<input type="text" id="birth_time" name="birth_time" class="generic_time Wdate" onClick="WdatePicker()"/>
 							</span>
 				
 							<span>
@@ -94,9 +95,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</span>
 							<span>
 								<label for="start_time" class="row_one_label">时　间</label>
-								<input type="text" id="start_time" name="study_start" class="generic_time"/>
+								<input type="text" id="start_time" name="study_start" class="Wdate generic_time" onClick="WdatePicker()"/>
 								<strong id="">至</strong>
-								<input type="text" id="end_time" name="study_end" class="generic_time"/>
+								<input type="text" id="end_time" name="study_end" class="Wdate generic_time" onClick="WdatePicker()"/>
 							</span>-->
 							<span>
 								<label class="row_one_label">证件类型</label>
@@ -155,9 +156,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<form action="" method="post">
 							<span>
 								<label for="adm_time" class="row_one_label">入学时间</label>
-								<input type="text" id="adm_time" name="adm_time" class="generic_time">
+								<input type="text" id="adm_time" name="adm_time" class="Wdate generic_time" onClick="WdatePicker()"/>
 								<label for="gra_time" class="row_two_label" >毕业时间</label>
-								<input type="text" id="gra_time" name="gra_time" class="input_text"/>
+								<input type="text" id="gra_time" name="gra_time" class="Wdate generic_time" onClick="WdatePicker()"/>
 							</span>
 							<span>
 								<label for="school_name" class="row_one_label">学　　校</label>
@@ -354,7 +355,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</span>
 								<span>
 									<label for="rep_time"  class="row_one_label">奖励时间</label>
-									<input type="text" name="rep_time" id="rep_time" />
+									<input type="text" name="rep_time" id="rep_time" class="Wdate" onClick="WdatePicker()"/>
 								</span>
 								<span class="continue_add">
 									<input type="button" name="add" id="add" value="继续添加" />
