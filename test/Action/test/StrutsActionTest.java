@@ -7,6 +7,7 @@ public class StrutsActionTest extends ActionSupport {
 	public String exec(){
 		System.out.println(" in struts");
 		return "success";
+		//test change.for commit
 	}
 	
 }
