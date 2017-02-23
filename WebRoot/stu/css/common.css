@@ -57,7 +57,7 @@ form .emer_label
 	font-size: 18px;
 	margin-left: 12px;
 }
-form .row_one_label
+form,div .row_one_label
 {
 	display: inline-block;
 	width: 91px;
