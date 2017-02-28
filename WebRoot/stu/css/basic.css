@@ -217,13 +217,11 @@ input{
 	top: 20px;
 	left: 20px;
 }
-.intro_main_center .bas_info form span input#name
+.intro_main_center .bas_info form span input#name,#id
 {
 	width: 303px;
 	max-width: 360px;
 	text-overflow: hidden;
-	
-	border: 1px solid red;
 }
 .intro_main_center .bas_info form span input#addr_home
 {
@@ -237,21 +235,21 @@ input{
 }
 .intro_main_center .bas_info form span label.identity
 {
-	margin-left: 159px;
+	margin-left: 168px;
 	
 }
 .intro_main_center .bas_info form span input#identity_id
 {
-	width: 222px;
+	width: 172px;
 	max-width: 300px;
 }
 .intro_main_center .bas_info form span label.email
 {
-	margin-left: 30px;
+	margin-left: 36px;
 }
 .intro_main_center .bas_info form span input#email
 {
-	width: 222px;
+	width: 172px;
 	max-width: 300px;
 }
 .dis{
@@ -381,4 +379,9 @@ form #expect_city #city input
 	margin: auto;
 	font-size: 16px;
 	color: black;
+}
+label#displayassess,#dispr_content,#dispro_content{
+	font-weight:bold;
+	color:red;
+	vertical-align:bottom;
 }
